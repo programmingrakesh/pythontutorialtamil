@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 
@@ -14,10 +14,14 @@
     tr {
       color: #fff;
     }
+
+    a {
+      color #fff;
+    }
             @keyframes color {
-              30% {background: #610527;}
-              40% {background: #630202;}
-              20% {background: #630202;}
+              30% {background: #ececec;}
+              40% {background: #e3c8c8;}
+              20% {background: #edd1d1;}
             }
 
             body{
@@ -58,7 +62,7 @@
 
 <script>
 	var myArray = [
-	    {'Lecture':'Lecture 1', 'Link_1':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing', 'Link_2':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing'},
+	    {'Lecture':'Lecture 1', 'Link_1':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing', 'Link_2':'coming soon'},
 	]
 
 	buildTable(myArray)
@@ -71,8 +75,8 @@
 		for (var i = 0; i < data.length; i++){
 			var row = `<tr>
 							<td>${data[i].Lecture}</td>
-							<td>${data[i].Link_1}</td>
-							<td>${data[i].Link_2}</td>
+							<td><a href="${data[i].Link_1}" style="display:block;">${data[i].Link_1}</a></td>
+							<td><a href="${data[i].Link_2}" style="display:block;">${data[i].Link_2}</a></td>
 					  </tr>`
 			table.innerHTML += row
 
