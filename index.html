@@ -1,54 +1,83 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Python Tutorial</title>
-  </head>
-  <style media="screen">
-    @keyframes color {
-      30% {background: #610527;}
-      40% {background: #630202;}
-      20% {background: #630202;}      
-    }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    body{
-      background: #000000;
-      animation: color 9s infinite linear;
-      text-align: center;
-      padding: 1.5em;
-    }
-    h1 {
-      font-size: 50px;
-      font-weight: 600;
-      color: transparent;
-      background-clip: text;
-      background-image: radial-gradient(circle, #d7c220, #ee4b2b);
-      -webkit-background-clip: text;
-      text-align: center;
-      background-color: burlywood;
-      ;
-    }
-    h2 {
-      padding-left: 30px;
-      font-weight: bolder;
-    }
-    p {
-      color: aqua;
-      font-size: larger;
-      padding-right: 1200px;
-    }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+</head>
 
-    a {
-      color: aquamarine;
-      padding-right: 800px;
-      padding-bottom: 1000px;
+
+
+<style>
+    th{
+        color:#fff;
+            }
+    tr {
+      color: #fff;
     }
+            @keyframes color {
+              30% {background: #610527;}
+              40% {background: #630202;}
+              20% {background: #630202;}
+            }
 
-  </style>
-  <body>
-    <h1>Python Tutorial in Tamil</h1>
-    <br><br><br><br>
+            body{
+              background: #000000;
+              animation: color 9s infinite linear;
+              text-align: center;
+              padding: 1.5em;
+            }
+            h1 {
+              font-size: 50px;
+              font-weight: 600;
+              color: transparent;
+              background-clip: text;
+              background-image: radial-gradient(circle, #d7c220, #ee4b2b);
+              -webkit-background-clip: text;
+              text-align: center;
+              background-color: burlywood;
+              ;
+            }
 
-    <a href="src/1.html">Lecture 1</a>
-  </body>
-</html>
+</style>
+
+<body>
+  <h1>Python Tutorial</h1>
+  <br><br>
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>Lecture</th>
+        <th>Link 1 (Tamil)</th>
+        <th>Link 2 (English)</th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+	    {'Lecture':'Lecture 1', 'Link_1':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing', 'Link_2':'https://drive.google.com/file/d/1HDYqf1D_TcvTViCj8_EelqsErfZwM5qW/view?usp=sharing'},
+	]
+
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].Lecture}</td>
+							<td>${data[i].Link_1}</td>
+							<td>${data[i].Link_2}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
